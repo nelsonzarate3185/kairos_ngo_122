@@ -1,0 +1,69 @@
+prompt --application/shared_components/data_loads/cargar_stentsal_det
+begin
+--   Manifest
+--     DATA LOAD: CARGAR_STENTSAL_DET
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(158290959792462180)
+,p_name=>'CARGAR_STENTSAL_DET'
+,p_format=>'CSV'
+,p_encoding=>'iso-8859-1'
+,p_csv_enclosed=>'"'
+,p_has_header_row=>true
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(158291223489462159)
+,p_data_profile_id=>wwv_flow_imp.id(158290959792462180)
+,p_name=>'C005'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'COD_ARTICULO'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(158291538869462158)
+,p_data_profile_id=>wwv_flow_imp.id(158290959792462180)
+,p_name=>'C014'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'LOTE'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(158291892871462158)
+,p_data_profile_id=>wwv_flow_imp.id(158290959792462180)
+,p_name=>'C007'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'CANTIDAD'
+);
+wwv_flow_imp_shared.create_load_table(
+ p_id=>wwv_flow_imp.id(158292069104462158)
+,p_name=>'CARGAR_STENTSAL_DET'
+,p_static_id=>'CARGAR_STENTSAL_DET'
+,p_target_type=>'COLLECTION'
+,p_collection_name=>'COLEC_ST_ENTSAL_DET'
+,p_data_profile_id=>wwv_flow_imp.id(158290959792462180)
+,p_loading_method=>'APPEND'
+,p_commit_interval=>200
+,p_error_handling=>'ABORT'
+,p_skip_validation=>'N'
+);
+wwv_flow_imp.component_end;
+end;
+/

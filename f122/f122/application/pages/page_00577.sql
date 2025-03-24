@@ -1,0 +1,211 @@
+prompt --application/pages/page_00577
+begin
+--   Manifest
+--     PAGE: 00577
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>577
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'AGENDAMIENTOS'
+,p_alias=>'AGENDAMIENTOS'
+,p_step_title=>'AGENDAMIENTOS'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'08'
+,p_last_updated_by=>'HSEGOVIA'
+,p_last_upd_yyyymmddhh24miss=>'20230801144617'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(187674189606283162)
+,p_plug_name=>'AGENDAMIENTOS'
+,p_region_template_options=>'#DEFAULT#:t-Region--showIcon:t-Region--accent1:t-Region--scrollBody'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'AGENDAMIENTOS'
+,p_include_rowid_column=>false
+,p_lazy_loading=>false
+,p_plug_source_type=>'NATIVE_CSS_CALENDAR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'FECHA_INICIO'
+,p_attribute_02=>'FECHA_FIN'
+,p_attribute_03=>'DESCRIPCION'
+,p_attribute_04=>'ID_AGENDAMIENTO'
+,p_attribute_05=>'f?p=&APP_ID.:578:&SESSION.::&DEBUG.::P578_ID_AGENDAMIENTO,P578_FECHA_INICIO,P578_FECHA_FIN:&ID_AGENDAMIENTO.,&FECHA_INICIO.,&FECHA_FIN.'
+,p_attribute_07=>'N'
+,p_attribute_11=>'month:week:day:navigation'
+,p_attribute_13=>'Y'
+,p_attribute_17=>'Y'
+,p_attribute_18=>'24'
+,p_attribute_19=>'Y'
+,p_attribute_20=>'9'
+,p_attribute_21=>'10'
+,p_attribute_22=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(186263040131274134)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(187674189606283162)
+,p_button_name=>'Creareventos'
+,p_button_static_id=>'crear'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_image_alt=>'Creareventos'
+,p_button_redirect_url=>'f?p=&APP_ID.:578:&SESSION.::&DEBUG.:::'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(186262451370274128)
+,p_name=>'P577_FECHA_INICIO'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(187674189606283162)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(186262574507274129)
+,p_name=>'P577_FECHA_FIN'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(187674189606283162)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(186262851905274132)
+,p_name=>'P577_ID_AGENDAMIENTO'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(187674189606283162)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(186262034406274124)
+,p_name=>'Dialog Closed: Refresh Calendar'
+,p_event_sequence=>10
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(187674189606283162)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186262199314274125)
+,p_event_id=>wwv_flow_imp.id(186262034406274124)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(187674189606283162)
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(186262202999274126)
+,p_name=>'Date Range Selected: Create new Event'
+,p_event_sequence=>20
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(187674189606283162)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'NATIVE_CSS_CALENDAR|REGION TYPE|apexcalendardateselect'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186262325410274127)
+,p_event_id=>wwv_flow_imp.id(186262202999274126)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P577_FECHA_INICIO'
+,p_attribute_01=>'JAVASCRIPT_EXPRESSION'
+,p_attribute_05=>'this.data.newStartDate'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186262612618274130)
+,p_event_id=>wwv_flow_imp.id(186262202999274126)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P577_FECHA_FIN'
+,p_attribute_01=>'JAVASCRIPT_EXPRESSION'
+,p_attribute_05=>'this.data.newEndDate'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186262922464274133)
+,p_event_id=>wwv_flow_imp.id(186262202999274126)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(187674189606283162)
+,p_server_condition_type=>'NEVER'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186263170468274135)
+,p_event_id=>wwv_flow_imp.id(186262202999274126)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'$(document).ready(function(){',
+'$(''#crear'').trigger(''click'');',
+'});'))
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186262763715274131)
+,p_event_id=>wwv_flow_imp.id(186262202999274126)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select nvl(max(id_agendamiento),0)+1 ',
+'into :P577_ID_AGENDAMIENTO',
+'from inv.AGENDAMIENTOS;',
+'',
+'insert into inv.AGENDAMIENTOS(id_agendamiento,descripcion,cod_cliente,fecha_inicio,fecha_fin,tipo_cliente)',
+'values(:P577_ID_AGENDAMIENTO, ''prueba'', ''452'', to_date(:P577_FECHA_INICIO,''yyyy/mm/dd''), to_date(:P577_FECHA_FIN,''yyyy/mm/dd''), 2);'))
+,p_attribute_02=>'P577_ID_AGENDAMIENTO,P577_FECHA_INICIO,P577_FECHA_FIN'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+,p_server_condition_type=>'NEVER'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(186263364157274137)
+,p_name=>'Nuevo'
+,p_event_sequence=>30
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(187674189606283162)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'apexafterclosecanceldialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(186263406888274138)
+,p_event_id=>wwv_flow_imp.id(186263364157274137)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(187674189606283162)
+);
+wwv_flow_imp.component_end;
+end;
+/

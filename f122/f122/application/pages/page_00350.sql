@@ -1,0 +1,141 @@
+prompt --application/pages/page_00350
+begin
+--   Manifest
+--     PAGE: 00350
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>350
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'STPEDCAR'
+,p_alias=>'STPEDCAR'
+,p_step_title=>'STPEDCAR'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'17'
+,p_last_updated_by=>'MARIANABLA'
+,p_last_upd_yyyymmddhh24miss=>'20230117120311'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(85303942301861130)
+,p_plug_name=>'PARAMETROS'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>990
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(169347080716876987)
+,p_plug_name=>unistr('PAR\00C1METROS')
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(40096829222263653)
+,p_plug_display_sequence=>1000
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(85554604873022920)
+,p_name=>'P350_P_COD_ARTICULO'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(169347080716876987)
+,p_prompt=>'P_COD_ARTICULO'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(85554783277022921)
+,p_name=>'P350_P_COD_REPUESTO'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(169347080716876987)
+,p_prompt=>'P_COD_REPUESTO'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(91118352752322876)
+,p_name=>'P350_P_SER_COMPROBANTE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(169347080716876987)
+,p_prompt=>'New'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(91118714497322877)
+,p_name=>'P350_P_NRO_COMPROBANTE'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(169347080716876987)
+,p_prompt=>'New'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(91119175162322877)
+,p_name=>'P350_P_COD_MARCA'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(169347080716876987)
+,p_prompt=>'New'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(85554872414022922)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'PR_INIT'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'IF APEX_COLLECTION.COLLECTION_MEMBER_COUNT( p_collection_name => ''COL_PARAMETROS_STPEDCAR'') = 1 THEN',
+'    SELECT C001, C002',
+'      INTO :P350_P_COD_ARTICULO, :P350_P_COD_REPUESTO',
+'      FROM APEX_COLLECTIONS',
+'     WHERE COLLECTION_NAME = ''COL_PARAMETROS_STPEDCAR'';',
+'END IF;     '))
+,p_process_clob_language=>'PLSQL'
+);
+wwv_flow_imp.component_end;
+end;
+/

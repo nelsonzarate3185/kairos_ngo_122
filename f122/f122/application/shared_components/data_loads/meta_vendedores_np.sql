@@ -1,0 +1,107 @@
+prompt --application/shared_components/data_loads/meta_vendedores_np
+begin
+--   Manifest
+--     DATA LOAD: META_VENDEDORES_NP
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'META_VENDEDORES_NP'
+,p_format=>'CSV'
+,p_encoding=>'iso-8859-1'
+,p_csv_enclosed=>'"'
+,p_has_header_row=>true
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021852793898123612)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C001'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'CODIGO_VENDEDOR'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021853023029123617)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C004'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'DIVISION'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021865612084171906)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C005'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'RUBRO'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021868026136181555)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C006'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'ZONA'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021871447671185116)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C002'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'MONTO'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(1021872656065189182)
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_name=>'C003'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'MONTO_REP'
+);
+wwv_flow_imp_shared.create_load_table(
+ p_id=>wwv_flow_imp.id(1021853376917123618)
+,p_name=>'META_VENDEDORES_NP'
+,p_static_id=>'META_VENDEDORES_NP'
+,p_target_type=>'COLLECTION'
+,p_collection_name=>'VENDEDOR_CONCEPTO_AUX'
+,p_data_profile_id=>wwv_flow_imp.id(1021852563713123604)
+,p_loading_method=>'APPEND'
+,p_commit_interval=>200
+,p_error_handling=>'ABORT'
+,p_skip_validation=>'N'
+);
+wwv_flow_imp.component_end;
+end;
+/

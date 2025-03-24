@@ -1,0 +1,192 @@
+prompt --application/pages/page_00262
+begin
+--   Manifest
+--     PAGE: 00262
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>262
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Permisos por Usuarios'
+,p_alias=>'PERMISOS-POR-USUARIOS1'
+,p_step_title=>'Permisos por Usuarios'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'18'
+,p_last_updated_by=>'INV'
+,p_last_upd_yyyymmddhh24miss=>'20221214102004'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(59830283709672559)
+,p_plug_name=>'Permisos por Usuarios'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(40123385688263660)
+,p_plug_display_sequence=>10
+,p_query_type=>'SQL'
+,p_plug_source=>'select cod_empresa, cod_usuario, nom_forma, parametro, permiso, a.rowid from PERMISOS_OPCIONES a'
+,p_plug_source_type=>'NATIVE_IR'
+,p_prn_page_header=>'Permisos por Usuarios'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(59830308823672559)
+,p_name=>'Permisos por Usuarios'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_base_pk1=>'ROWID'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'C'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_detail_link=>'f?p=&APP_ID.:263:&SESSION.::&DEBUG.:RP:P263_ROWID:\#ROWID#\'
+,p_detail_link_text=>'<span aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span>'
+,p_owner=>'INV'
+,p_internal_uid=>59830308823672559
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59832700358672561)
+,p_db_column_name=>'ROWID'
+,p_display_order=>0
+,p_column_identifier=>'F'
+,p_column_label=>'ROWID'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_rpt_show_filter_lov=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59830744768672559)
+,p_db_column_name=>'COD_EMPRESA'
+,p_display_order=>1
+,p_column_identifier=>'A'
+,p_column_label=>'Cod Empresa'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59831153465672560)
+,p_db_column_name=>'COD_USUARIO'
+,p_display_order=>2
+,p_column_identifier=>'B'
+,p_column_label=>'Cod Usuario'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(59850257831797188)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59831566363672561)
+,p_db_column_name=>'NOM_FORMA'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'Nom Forma'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(59835821027685990)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59831901014672561)
+,p_db_column_name=>'PARAMETRO'
+,p_display_order=>4
+,p_column_identifier=>'D'
+,p_column_label=>'Parametro'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(59832366867672561)
+,p_db_column_name=>'PERMISO'
+,p_display_order=>5
+,p_column_identifier=>'E'
+,p_column_label=>'Permiso'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(59843924298735820)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'598440'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'ROWID:COD_EMPRESA:COD_USUARIO:NOM_FORMA:PARAMETRO:PERMISO'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(59834937698672563)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(40134615190263663)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(40070279985263645)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_imp.id(40189153869263678)
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(59833275647672562)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(59830283709672559)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Crear'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:263:&SESSION.::&DEBUG.:263'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(59833525323672562)
+,p_name=>'Edit Report - Dialog Closed'
+,p_event_sequence=>10
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(59830283709672559)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(59834005845672562)
+,p_event_id=>wwv_flow_imp.id(59833525323672562)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(59830283709672559)
+);
+wwv_flow_imp.component_end;
+end;
+/

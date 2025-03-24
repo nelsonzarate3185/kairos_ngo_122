@@ -1,0 +1,311 @@
+prompt --application/pages/page_00351
+begin
+--   Manifest
+--     PAGE: 00351
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>351
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Calendario'
+,p_alias=>'CALENDARIO'
+,p_step_title=>'calendario'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'18'
+,p_last_updated_by=>'INV'
+,p_last_upd_yyyymmddhh24miss=>'20230119095708'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(93843902468706968)
+,p_plug_name=>'Calendario'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(40123385688263660)
+,p_plug_display_sequence=>20
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT COD_EMPRESA, COD_MODULO, FEC_ACTUAL, ALTA_POR, FEC_ALTA, ACTUALIZADO_POR, FEC_ACTUALIZADO, FEC_INICIAL, FEC_FINAL, USA_CALENDARIO, ROWID FROM CALENDARIOS',
+'where cod_empresa=:P351_EMPRESA'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_ajax_items_to_submit=>'P351_EMPRESA'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'Calendario'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(93844090741706968)
+,p_name=>'BSCALEND'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'C'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_detail_link=>'f?p=&APP_ID.:352:&SESSION.::&DEBUG.:RP:P352_ROWID:\#ROWID#\'
+,p_detail_link_text=>'<span aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span>'
+,p_owner=>'INV'
+,p_internal_uid=>93844090741706968
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93848330883706973)
+,p_db_column_name=>'ROWID'
+,p_display_order=>0
+,p_column_identifier=>'K'
+,p_column_label=>'ROWID'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_rpt_show_filter_lov=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93844476839706970)
+,p_db_column_name=>'COD_EMPRESA'
+,p_display_order=>1
+,p_column_identifier=>'A'
+,p_column_label=>'Cod Empresa'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93844875324706972)
+,p_db_column_name=>'COD_MODULO'
+,p_display_order=>2
+,p_column_identifier=>'B'
+,p_column_label=>'Cod Modulo'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93845262244706972)
+,p_db_column_name=>'FEC_ACTUAL'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'Fec Actual'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93845670177706972)
+,p_db_column_name=>'ALTA_POR'
+,p_display_order=>4
+,p_column_identifier=>'D'
+,p_column_label=>'Alta Por'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93846051283706972)
+,p_db_column_name=>'FEC_ALTA'
+,p_display_order=>5
+,p_column_identifier=>'E'
+,p_column_label=>'Fec Alta'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93846376794706972)
+,p_db_column_name=>'ACTUALIZADO_POR'
+,p_display_order=>6
+,p_column_identifier=>'F'
+,p_column_label=>'Actualizado Por'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93846735978706972)
+,p_db_column_name=>'FEC_ACTUALIZADO'
+,p_display_order=>7
+,p_column_identifier=>'G'
+,p_column_label=>'Fec Actualizado'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93847168636706973)
+,p_db_column_name=>'FEC_INICIAL'
+,p_display_order=>8
+,p_column_identifier=>'H'
+,p_column_label=>'Fec Inicial'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93847586400706973)
+,p_db_column_name=>'FEC_FINAL'
+,p_display_order=>9
+,p_column_identifier=>'I'
+,p_column_label=>'Fec Final'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(93847984584706973)
+,p_db_column_name=>'USA_CALENDARIO'
+,p_display_order=>10
+,p_column_identifier=>'J'
+,p_column_label=>'Usa Calendario'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(93851231900707826)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'938513'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'ROWID:COD_EMPRESA:COD_MODULO:FEC_ACTUAL:ALTA_POR:FEC_ALTA:ACTUALIZADO_POR:FEC_ACTUALIZADO:FEC_INICIAL:FEC_FINAL:USA_CALENDARIO'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(93850591224706976)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(40134615190263663)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(40070279985263645)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_imp.id(40189153869263678)
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(93848823111706973)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(93843902468706968)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Create'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:352:&SESSION.::&DEBUG.:352'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(64084598893872810)
+,p_name=>'P351_EMPRESA'
+,p_item_sequence=>10
+,p_item_default=>'1'
+,p_prompt=>'Empresa'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select descripcion, cod_empresa from empresas',
+'order by to_number(cod_empresa)'))
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(93849108043706974)
+,p_name=>'Edit Report - Dialog Closed'
+,p_event_sequence=>10
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(93843902468706968)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(93849670403706975)
+,p_event_id=>wwv_flow_imp.id(93849108043706974)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(93843902468706968)
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(64084632971872811)
+,p_name=>'da_empresa'
+,p_event_sequence=>20
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P351_EMPRESA'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(64084797802872812)
+,p_event_id=>wwv_flow_imp.id(64084632971872811)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(93843902468706968)
+);
+wwv_flow_imp.component_end;
+end;
+/

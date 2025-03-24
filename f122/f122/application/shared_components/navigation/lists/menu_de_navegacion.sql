@@ -1,0 +1,2710 @@
+prompt --application/shared_components/navigation/lists/menu_de_navegacion
+begin
+--   Manifest
+--     LIST: Menu de Navegacion
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(40357387724575213)
+,p_name=>'Menu de Navegacion'
+,p_list_type=>'SQL_QUERY'
+,p_list_query=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT leve lvl,',
+'       labe label,',
+'       targ target,',
+'       es_curr is_current,',
+'       icon,',
+'       '''' image_attribute,',
+'       '''' image_alt_attribute',
+'  FROM table(seguridad.retorna_menu_apex (pAPP_ID      => :APP_ID,',
+'                                          pUSUA0100_ID => :P_USUA0100_ID, ',
+'                                          pPAGE_ID     => :APP_PAGE_ID,',
+'                                          pSESSION_ID  => :APP_SESSION,',
+'                                          pParam       => '''',',
+'                                          pdm$tamb     => 1));',
+''))
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6210314475410309)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>unistr('Detalle de ventas por art\00EDculos')
+,p_list_item_link_target=>'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'8'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6223593886730637)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>unistr('Detalle de ventas por art\00EDculos')
+,p_list_item_link_target=>'f?p=&APP_ID.:10:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'10'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6307179557626035)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Anulacion De Pedidos'
+,p_list_item_link_target=>'f?p=&APP_ID.:15:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'15'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6310494714710546)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'Listado de OTS entregadas'
+,p_list_item_link_target=>'f?p=&APP_ID.:16:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'16'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6421164785420635)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'Resumen de Ventas por Vendedores Permitidos'
+,p_list_item_link_target=>'f?p=&APP_ID.:17:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'17'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6440458465639368)
+,p_list_item_display_sequence=>60
+,p_list_item_link_text=>'LLAMA MODAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:900:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'900'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6927831508704309)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'Carga de Fondo de Sencillo'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'20'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6962650355787628)
+,p_list_item_display_sequence=>80
+,p_list_item_link_text=>unistr('Generaci\00F3n de Gift Card')
+,p_list_item_link_target=>'f?p=&APP_ID.:21:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'21'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(7324101321528888)
+,p_list_item_display_sequence=>90
+,p_list_item_link_text=>'Rendicion de Ots Autorizados'
+,p_list_item_link_target=>'f?p=&APP_ID.:18:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'18'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(8249492890500826)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>unistr('Alerta de Facturas en Dep\00F3sito')
+,p_list_item_link_target=>'f?p=&APP_ID.:22:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'22'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(10638065881941436)
+,p_list_item_display_sequence=>110
+,p_list_item_link_text=>'Devolucion por Nota de Credito'
+,p_list_item_link_target=>'f?p=&APP_ID.:25:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'25'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(12455623920965195)
+,p_list_item_display_sequence=>120
+,p_list_item_link_text=>'Visor PDF'
+,p_list_item_link_target=>'f?p=&APP_ID.:800:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'800'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(12458543812009616)
+,p_list_item_display_sequence=>130
+,p_list_item_link_text=>'Prueba de Visor'
+,p_list_item_link_target=>'f?p=&APP_ID.:801:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'801'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(13472811720240321)
+,p_list_item_display_sequence=>140
+,p_list_item_link_text=>'RPPLANIL'
+,p_list_item_link_target=>'f?p=&APP_ID.:31:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'31'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(8724297667948409)
+,p_list_item_display_sequence=>150
+,p_list_item_link_text=>unistr('Ordenes de Trabajo Terminadas por T\00E9cnico')
+,p_list_item_link_target=>'f?p=&APP_ID.:37:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'37'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(8728753444132584)
+,p_list_item_display_sequence=>160
+,p_list_item_link_text=>'CPSVALES'
+,p_list_item_link_target=>'f?p=&APP_ID.:33:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'33'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(10542905510134535)
+,p_list_item_display_sequence=>170
+,p_list_item_link_text=>unistr('Comparativo de ventas anuales por art\00EDculos')
+,p_list_item_link_target=>'f?p=&APP_ID.:38:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'38'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(13829377720425648)
+,p_list_item_display_sequence=>180
+,p_list_item_link_text=>unistr('Asignaci\00F3n de Promotoras')
+,p_list_item_link_target=>'f?p=&APP_ID.:56:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'56'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(14631295053469867)
+,p_list_item_display_sequence=>190
+,p_list_item_link_text=>'Alta de paginas en menu'
+,p_list_item_link_target=>'f?p=&APP_ID.:5000:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'5000'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(15856163236339681)
+,p_list_item_display_sequence=>200
+,p_list_item_link_text=>unistr('Carga de Notas de Cr\00E9dito')
+,p_list_item_link_target=>'f?p=&APP_ID.:103:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'103'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(16660390571853617)
+,p_list_item_display_sequence=>210
+,p_list_item_link_text=>'Movimiento de Caja'
+,p_list_item_link_target=>'f?p=&APP_ID.:95:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'95'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(17518113798162792)
+,p_list_item_display_sequence=>220
+,p_list_item_link_text=>'Carga de Vendedores'
+,p_list_item_link_target=>'f?p=&APP_ID.:100:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'100'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(18386322277567211)
+,p_list_item_display_sequence=>240
+,p_list_item_link_text=>'VTRPEPEN - Reporte de Pedidos Pendientes'
+,p_list_item_link_target=>'f?p=&APP_ID.:104:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'104'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(19493286681678534)
+,p_list_item_display_sequence=>250
+,p_list_item_link_text=>'Seguridad Granular'
+,p_list_item_link_target=>'f?p=&APP_ID.:109:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'109'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(19738360520535783)
+,p_list_item_display_sequence=>260
+,p_list_item_link_text=>'Pagina prueba seguridad granular'
+,p_list_item_link_target=>'f?p=&APP_ID.:115:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'115'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(19748337083808092)
+,p_list_item_display_sequence=>270
+,p_list_item_link_text=>'CANOCONF - Solicitud No Conforme'
+,p_list_item_link_target=>'f?p=&APP_ID.:146:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'146'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(20873787670300474)
+,p_list_item_display_sequence=>280
+,p_list_item_link_text=>'Reporte de OT Termindas por Tecnico - Comisiones'
+,p_list_item_link_target=>'f?p=&APP_ID.:147:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'147'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(21877364220136031)
+,p_list_item_display_sequence=>290
+,p_list_item_link_text=>'VTRPRERE'
+,p_list_item_link_target=>'f?p=&APP_ID.:106:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'106'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22539022814090948)
+,p_list_item_display_sequence=>300
+,p_list_item_link_text=>'Carga de Facturas'
+,p_list_item_link_target=>'f?p=&APP_ID.:99:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'99'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(23423592105742843)
+,p_list_item_display_sequence=>310
+,p_list_item_link_text=>'Lista de Precios'
+,p_list_item_link_target=>'f?p=&APP_ID.:93:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'93'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25191731956932687)
+,p_list_item_display_sequence=>320
+,p_list_item_link_text=>'BSSEGPER'
+,p_list_item_link_target=>'f?p=&APP_ID.:91:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'91'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25374673906770107)
+,p_list_item_display_sequence=>330
+,p_list_item_link_text=>'BSPERSON'
+,p_list_item_link_target=>'f?p=&APP_ID.:102:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'102'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25435170996203126)
+,p_list_item_display_sequence=>340
+,p_list_item_link_text=>'BSREFCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:108:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'108'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25551344679838227)
+,p_list_item_display_sequence=>350
+,p_list_item_link_text=>'BSAUTREC'
+,p_list_item_link_target=>'f?p=&APP_ID.:112:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'112'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25828166457541911)
+,p_list_item_display_sequence=>360
+,p_list_item_link_text=>'CCDOCBAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:114:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'114'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(26329850350286549)
+,p_list_item_display_sequence=>370
+,p_list_item_link_text=>unistr('Editar Direcci\00F3n')
+,p_list_item_link_target=>'f?p=&APP_ID.:118:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'118'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(26398824426563065)
+,p_list_item_display_sequence=>380
+,p_list_item_link_text=>'Consultas de Derivaciones Realizadas'
+,p_list_item_link_target=>'f?p=&APP_ID.:158:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'158'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(27036152779314304)
+,p_list_item_display_sequence=>390
+,p_list_item_link_text=>'VTRFAEMD'
+,p_list_item_link_target=>'f?p=&APP_ID.:111:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'111'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(27427724804643632)
+,p_list_item_display_sequence=>400
+,p_list_item_link_text=>'CCCRECPH'
+,p_list_item_link_target=>'f?p=&APP_ID.:122:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'122'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(28302404636376214)
+,p_list_item_display_sequence=>410
+,p_list_item_link_text=>unistr('Editar Tel\00E9fono')
+,p_list_item_link_target=>'f?p=&APP_ID.:117:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'117'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(28592688484464285)
+,p_list_item_display_sequence=>420
+,p_list_item_link_text=>unistr('Edici\00F3n de documentos')
+,p_list_item_link_target=>'f?p=&APP_ID.:119:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'119'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(28622245974918688)
+,p_list_item_display_sequence=>430
+,p_list_item_link_text=>'Editar responsable legal'
+,p_list_item_link_target=>'f?p=&APP_ID.:123:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'123'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(29528002945135450)
+,p_list_item_display_sequence=>440
+,p_list_item_link_text=>'Solicitud de Credito'
+,p_list_item_link_target=>'f?p=&APP_ID.:131:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'131'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(29647788733755600)
+,p_list_item_display_sequence=>450
+,p_list_item_link_text=>'E-mail de contactos'
+,p_list_item_link_target=>'f?p=&APP_ID.:132:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'132'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(30467573415156391)
+,p_list_item_display_sequence=>470
+,p_list_item_link_text=>'CCCALIFC'
+,p_list_item_link_target=>'f?p=&APP_ID.:164:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'164'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(32174968197545579)
+,p_list_item_display_sequence=>490
+,p_list_item_link_text=>'VTCPEDRE - Consulta de pedido de repuestos'
+,p_list_item_link_target=>'f?p=&APP_ID.:165:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'165'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(33994398656250641)
+,p_list_item_display_sequence=>500
+,p_list_item_link_text=>'VTMOTANU'
+,p_list_item_link_target=>'f?p=&APP_ID.:137:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'137'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(35857110387790632)
+,p_list_item_display_sequence=>510
+,p_list_item_link_text=>'CCDESCLI - Descuentos a Clientes'
+,p_list_item_link_target=>'f?p=&APP_ID.:170:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'170'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(36358864323207600)
+,p_list_item_display_sequence=>520
+,p_list_item_link_text=>'VTPEDAUTRES'
+,p_list_item_link_target=>'f?p=&APP_ID.:175:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'175'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(36453934028075982)
+,p_list_item_display_sequence=>530
+,p_list_item_link_text=>'STREMISI'
+,p_list_item_link_target=>'f?p=&APP_ID.:178:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'178'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(36596386448526440)
+,p_list_item_display_sequence=>540
+,p_list_item_link_text=>'VTRVTMVE'
+,p_list_item_link_target=>'f?p=&APP_ID.:181:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'181'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(37853927851601180)
+,p_list_item_display_sequence=>550
+,p_list_item_link_text=>'VTMOTI'
+,p_list_item_link_target=>'f?p=&APP_ID.:179:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'179'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(38420168751924626)
+,p_list_item_display_sequence=>560
+,p_list_item_link_text=>'VTRVEVCO'
+,p_list_item_link_target=>'f?p=&APP_ID.:169:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'169'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(41093472445168253)
+,p_list_item_display_sequence=>580
+,p_list_item_link_text=>'VTRLISPR'
+,p_list_item_link_target=>'f?p=&APP_ID.:189:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'189'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(41883045772391260)
+,p_list_item_display_sequence=>590
+,p_list_item_link_text=>'CCSEGCLI'
+,p_list_item_link_target=>'f?p=&APP_ID.:190:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'190'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(42071185541305575)
+,p_list_item_display_sequence=>600
+,p_list_item_link_text=>'CCCLIDOCVEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:191:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'191'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(42277228045976859)
+,p_list_item_display_sequence=>610
+,p_list_item_link_text=>'CRSOLRE'
+,p_list_item_link_target=>'f?p=&APP_ID.:192:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'192'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(42584544958338082)
+,p_list_item_display_sequence=>620
+,p_list_item_link_text=>'VTRVEMOA'
+,p_list_item_link_target=>'f?p=&APP_ID.:194:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'194'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(43255858672447787)
+,p_list_item_display_sequence=>630
+,p_list_item_link_text=>'VTRGARAN'
+,p_list_item_link_target=>'f?p=&APP_ID.:197:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'197'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(43374617565881333)
+,p_list_item_display_sequence=>640
+,p_list_item_link_text=>'VTRRESOR'
+,p_list_item_link_target=>'f?p=&APP_ID.:199:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'199'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(43402767377077024)
+,p_list_item_display_sequence=>650
+,p_list_item_link_text=>'VTOFERTA'
+,p_list_item_link_target=>'f?p=&APP_ID.:201:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'201'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(44656114337302761)
+,p_list_item_display_sequence=>660
+,p_list_item_link_text=>'VTORIGEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:208:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'208'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(44667068408395070)
+,p_list_item_display_sequence=>670
+,p_list_item_link_text=>'VTORIGEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:196:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'196'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(44719439670651004)
+,p_list_item_display_sequence=>680
+,p_list_item_link_text=>'VTPARCON'
+,p_list_item_link_target=>'f?p=&APP_ID.:209:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'209'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(44969578651399291)
+,p_list_item_display_sequence=>690
+,p_list_item_link_text=>'RPPROGUA'
+,p_list_item_link_target=>'f?p=&APP_ID.:210:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'210'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(47474734584548413)
+,p_list_item_display_sequence=>710
+,p_list_item_link_text=>'CCRETCHE'
+,p_list_item_link_target=>'f?p=&APP_ID.:214:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'214'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(47526386755138177)
+,p_list_item_display_sequence=>720
+,p_list_item_link_text=>'VTCANRET'
+,p_list_item_link_target=>'f?p=&APP_ID.:215:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'215'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(50481944476447294)
+,p_list_item_display_sequence=>730
+,p_list_item_link_text=>'FVMETVEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:212:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'212'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(50726956465579608)
+,p_list_item_display_sequence=>740
+,p_list_item_link_text=>'FVAGRVEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:218:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'218'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(51133110762890487)
+,p_list_item_display_sequence=>750
+,p_list_item_link_text=>'FVCOPROM'
+,p_list_item_link_target=>'f?p=&APP_ID.:224:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'224'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(51287422375016365)
+,p_list_item_display_sequence=>760
+,p_list_item_link_text=>'FVPAVECM'
+,p_list_item_link_target=>'f?p=&APP_ID.:227:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'227'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(51782344360510977)
+,p_list_item_display_sequence=>770
+,p_list_item_link_text=>'FVPERICO'
+,p_list_item_link_target=>'f?p=&APP_ID.:222:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'222'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(51815738451032282)
+,p_list_item_display_sequence=>780
+,p_list_item_link_text=>'prueba tabs'
+,p_list_item_link_target=>'f?p=&APP_ID.:354354:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'354354'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(52220206106669871)
+,p_list_item_display_sequence=>790
+,p_list_item_link_text=>'FVCOMPRO'
+,p_list_item_link_target=>'f?p=&APP_ID.:226:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'226'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(52222306833722160)
+,p_list_item_display_sequence=>800
+,p_list_item_link_text=>'Verificacion de Margenes de Promociones FVMRGPRM'
+,p_list_item_link_target=>'f?p=&APP_ID.:228:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'228'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(52278553167446246)
+,p_list_item_display_sequence=>810
+,p_list_item_link_text=>'VTRRANCL'
+,p_list_item_link_target=>'f?p=&APP_ID.:230:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'230'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(52565299377148765)
+,p_list_item_display_sequence=>820
+,p_list_item_link_text=>'FVPROCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:223:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'223'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(53797595369038097)
+,p_list_item_display_sequence=>830
+,p_list_item_link_text=>'FVGRUVEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:231:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'231'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(53814252932097047)
+,p_list_item_display_sequence=>840
+,p_list_item_link_text=>'FVRCOMGR'
+,p_list_item_link_target=>'f?p=&APP_ID.:229:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'229'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(54275864015833038)
+,p_list_item_display_sequence=>850
+,p_list_item_link_text=>'BSOBSCLI'
+,p_list_item_link_target=>'f?p=&APP_ID.:236:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'236'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(54395528937790796)
+,p_list_item_display_sequence=>860
+,p_list_item_link_text=>'Informe'
+,p_list_item_link_target=>'f?p=&APP_ID.:1000:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'1000'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(54445147758920822)
+,p_list_item_display_sequence=>870
+,p_list_item_link_text=>'FVPROYEC'
+,p_list_item_link_target=>'f?p=&APP_ID.:238:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'238'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(54852409700884122)
+,p_list_item_display_sequence=>880
+,p_list_item_link_text=>unistr('CONFACEL - Configuraci\00F3n Facturas Electr\00F3nicas')
+,p_list_item_link_target=>'f?p=&APP_ID.:239:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'239'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(56078637464779727)
+,p_list_item_display_sequence=>890
+,p_list_item_link_text=>'VTPEDIDOV'
+,p_list_item_link_target=>'f?p=&APP_ID.:233:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'233,234'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(58343796030629056)
+,p_list_item_display_sequence=>900
+,p_list_item_link_text=>'FVPROEMP'
+,p_list_item_link_target=>'f?p=&APP_ID.:237:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'237'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(58632983077691533)
+,p_list_item_display_sequence=>910
+,p_list_item_link_text=>'VTCANVER - Autorizacion Canal Verde'
+,p_list_item_link_target=>'f?p=&APP_ID.:240:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'240'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(58663023485004293)
+,p_list_item_display_sequence=>920
+,p_list_item_link_text=>'STPROMOC'
+,p_list_item_link_target=>'f?p=&APP_ID.:241:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'241'
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(58684016360178551)
+,p_list_item_display_sequence=>930
+,p_list_item_link_text=>'FVREPMGPR Verificacion Margen Promocion'
+,p_list_item_link_target=>'f?p=&APP_ID.:242:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'242'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(58987708497344148)
+,p_list_item_display_sequence=>940
+,p_list_item_link_text=>'STCONGAR'
+,p_list_item_link_target=>'f?p=&APP_ID.:243:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'243'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(59468451209436645)
+,p_list_item_display_sequence=>950
+,p_list_item_link_text=>'Permisos Canal Verde'
+,p_list_item_link_target=>'f?p=&APP_ID.:257:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'257,258'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(59790805971539996)
+,p_list_item_display_sequence=>960
+,p_list_item_link_text=>'Canales  por Usuario'
+,p_list_item_link_target=>'f?p=&APP_ID.:260:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'260,261'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(59829897315672558)
+,p_list_item_display_sequence=>970
+,p_list_item_link_text=>'Permisos por Usuarios'
+,p_list_item_link_target=>'f?p=&APP_ID.:262:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'262,263'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63070808964732833)
+,p_list_item_display_sequence=>980
+,p_list_item_link_text=>'SMSEGOBR'
+,p_list_item_link_target=>'f?p=&APP_ID.:249:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'249'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63238505336188080)
+,p_list_item_display_sequence=>990
+,p_list_item_link_text=>'FCOMSUPR_RESUMEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:255:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'255'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63274398048911326)
+,p_list_item_display_sequence=>1000
+,p_list_item_link_text=>'Seguimiento de Asistencia Gastro SMSEGASI'
+,p_list_item_link_target=>'f?p=&APP_ID.:257:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'257'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63626929725349562)
+,p_list_item_display_sequence=>1010
+,p_list_item_link_text=>'FVREPROM'
+,p_list_item_link_target=>'f?p=&APP_ID.:248:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'248'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63662434644742968)
+,p_list_item_display_sequence=>1020
+,p_list_item_link_text=>'SMREGCAP'
+,p_list_item_link_target=>'f?p=&APP_ID.:265:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'265'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(63677941846136287)
+,p_list_item_display_sequence=>1030
+,p_list_item_link_text=>'SMCAPMKT - Registro de Capacitaciones'
+,p_list_item_link_target=>'f?p=&APP_ID.:252:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'252'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(64071103960754210)
+,p_list_item_display_sequence=>1040
+,p_list_item_link_text=>'Motivos de Llamadas'
+,p_list_item_link_target=>'f?p=&APP_ID.:254:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'254,256'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(64531680923680551)
+,p_list_item_display_sequence=>1050
+,p_list_item_link_text=>'BSPROG - PROGRAMAS'
+,p_list_item_link_target=>'f?p=&APP_ID.:268:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'268'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(65616966875876461)
+,p_list_item_display_sequence=>1060
+,p_list_item_link_text=>'SMSESSGG'
+,p_list_item_link_target=>'f?p=&APP_ID.:270:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'270'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(66826854175315639)
+,p_list_item_display_sequence=>1070
+,p_list_item_link_text=>'SMPEDSG'
+,p_list_item_link_target=>'f?p=&APP_ID.:272:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'272'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(66948796887826840)
+,p_list_item_display_sequence=>1080
+,p_list_item_link_text=>'Puntos Por Productos'
+,p_list_item_link_target=>'f?p=&APP_ID.:274:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'274,275'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(67492732434133275)
+,p_list_item_display_sequence=>1090
+,p_list_item_link_text=>'Prosupuesto de Obras - SMENTSAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:277:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'277'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(67775103435098777)
+,p_list_item_display_sequence=>1100
+,p_list_item_link_text=>'FVVALCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:278:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'278'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(69311938542861660)
+,p_list_item_display_sequence=>1120
+,p_list_item_link_text=>'Carga de Puntos Promo - STCANPUN'
+,p_list_item_link_target=>'f?p=&APP_ID.:284:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'284'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72152963887204024)
+,p_list_item_display_sequence=>1130
+,p_list_item_link_text=>'Vendedores para Puntos'
+,p_list_item_link_target=>'f?p=&APP_ID.:281:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'281,286'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72461436220197821)
+,p_list_item_display_sequence=>1140
+,p_list_item_link_text=>'BSPARAME'
+,p_list_item_link_target=>'f?p=&APP_ID.:289:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'289'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72485053902572070)
+,p_list_item_display_sequence=>1150
+,p_list_item_link_text=>'Acuerdos Comerciales - CPACUECO'
+,p_list_item_link_target=>'f?p=&APP_ID.:290:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'290'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72859681247297868)
+,p_list_item_display_sequence=>1160
+,p_list_item_link_text=>'BSTIPCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:291:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'291'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72866231280303128)
+,p_list_item_display_sequence=>1170
+,p_list_item_link_text=>'BSTPTRA'
+,p_list_item_link_target=>'f?p=&APP_ID.:293:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'293'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72888809967339727)
+,p_list_item_display_sequence=>1180
+,p_list_item_link_text=>'BSSERCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:294:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table-pointer'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'294'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(72911576414376072)
+,p_list_item_display_sequence=>1190
+,p_list_item_link_text=>'VTPEDAUT'
+,p_list_item_link_target=>'f?p=&APP_ID.:298:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'298'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(73894292550641941)
+,p_list_item_display_sequence=>1200
+,p_list_item_link_text=>'BSSUBTRA'
+,p_list_item_link_target=>'f?p=&APP_ID.:299:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'299'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(74296003628697952)
+,p_list_item_display_sequence=>1210
+,p_list_item_link_text=>'BSESCIVI'
+,p_list_item_link_target=>'f?p=&APP_ID.:302:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'302'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(74414630078164389)
+,p_list_item_display_sequence=>1220
+,p_list_item_link_text=>'Carga de Talonarios BSTALONA'
+,p_list_item_link_target=>'f?p=&APP_ID.:303:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'303'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(74562717372588470)
+,p_list_item_display_sequence=>1230
+,p_list_item_link_text=>'BSPROFES'
+,p_list_item_link_target=>'f?p=&APP_ID.:305:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'305'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(75301563331039678)
+,p_list_item_display_sequence=>1240
+,p_list_item_link_text=>'CCHISTCP'
+,p_list_item_link_target=>'f?p=&APP_ID.:295:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'295'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(75855623379464108)
+,p_list_item_display_sequence=>1250
+,p_list_item_link_text=>'CALINTEC'
+,p_list_item_link_target=>'f?p=&APP_ID.:309:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'309'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(75872021339628833)
+,p_list_item_display_sequence=>1260
+,p_list_item_link_text=>'Carga de tipos de Cambio por Moneda BSTIPCAM'
+,p_list_item_link_target=>'f?p=&APP_ID.:310:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'310'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(75876872065661716)
+,p_list_item_display_sequence=>1270
+,p_list_item_link_text=>'Tipos de Cambio'
+,p_list_item_link_target=>'f?p=&APP_ID.:311:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'311'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(76476490944562398)
+,p_list_item_display_sequence=>1280
+,p_list_item_link_text=>'CAESCCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:304:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'304'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(76582567821928748)
+,p_list_item_display_sequence=>1290
+,p_list_item_link_text=>unistr('Definici\00F3n de Soluciones')
+,p_list_item_link_target=>'f?p=&APP_ID.:312:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'312'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(76719975909018309)
+,p_list_item_display_sequence=>1300
+,p_list_item_link_text=>'Definicion de Problemas - CAPROBLE'
+,p_list_item_link_target=>'f?p=&APP_ID.:313:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'313'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(76989228923636331)
+,p_list_item_display_sequence=>1310
+,p_list_item_link_text=>'CAREPSTA'
+,p_list_item_link_target=>'f?p=&APP_ID.:315:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'315'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(77381423419826108)
+,p_list_item_display_sequence=>1320
+,p_list_item_link_text=>'Solicitud de Servicio SET UP'
+,p_list_item_link_target=>'f?p=&APP_ID.:317:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'317'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(77946523262439078)
+,p_list_item_display_sequence=>1330
+,p_list_item_link_text=>'BSPAISES'
+,p_list_item_link_target=>'f?p=&APP_ID.:306:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'306,319'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(77974301243663432)
+,p_list_item_display_sequence=>1340
+,p_list_item_link_text=>'CAPANTEC'
+,p_list_item_link_target=>'f?p=&APP_ID.:308:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'308'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(78246094002630531)
+,p_list_item_display_sequence=>1360
+,p_list_item_link_text=>'CALLAPEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:321:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'321'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(78296977327804388)
+,p_list_item_display_sequence=>1370
+,p_list_item_link_text=>'VTREPDET (a migrar)'
+,p_list_item_link_target=>'f?p=&APP_ID.:322:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'322'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(78419679112097487)
+,p_list_item_display_sequence=>1380
+,p_list_item_link_text=>'CACONMAR (a migrar)'
+,p_list_item_link_target=>'f?p=&APP_ID.:323:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'323'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(78422561625105389)
+,p_list_item_display_sequence=>1390
+,p_list_item_link_text=>'VTCONMAR  (a migrar)'
+,p_list_item_link_target=>'f?p=&APP_ID.:324:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'324'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(79920973076816281)
+,p_list_item_display_sequence=>1410
+,p_list_item_link_text=>'CAVISPRO'
+,p_list_item_link_target=>'f?p=&APP_ID.:329:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'329'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(82145353271154151)
+,p_list_item_display_sequence=>1420
+,p_list_item_link_text=>'CAORDTRA a migrar'
+,p_list_item_link_target=>'f?p=&APP_ID.:320:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'320'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(82155706165163905)
+,p_list_item_display_sequence=>1430
+,p_list_item_link_text=>'Distritos SET'
+,p_list_item_link_target=>'f?p=&APP_ID.:332:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'332,333'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(85347069831635496)
+,p_list_item_display_sequence=>1440
+,p_list_item_link_text=>'AUAUDIT'
+,p_list_item_link_target=>'f?p=&APP_ID.:338:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'338'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(85829161025549170)
+,p_list_item_display_sequence=>1450
+,p_list_item_link_text=>'Consulta de Repuestos a Presupuestar - CAENTSAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:342:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'342'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(91065809480611134)
+,p_list_item_display_sequence=>1460
+,p_list_item_link_text=>'CACONOT'
+,p_list_item_link_target=>'f?p=&APP_ID.:348:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'348'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(91115966342314907)
+,p_list_item_display_sequence=>1470
+,p_list_item_link_text=>'STPEDCAR'
+,p_list_item_link_target=>'f?p=&APP_ID.:350:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'350'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(92039065239307368)
+,p_list_item_display_sequence=>1480
+,p_list_item_link_text=>'CATIPOT'
+,p_list_item_link_target=>'f?p=&APP_ID.:341:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'341'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(93768971093234307)
+,p_list_item_display_sequence=>1490
+,p_list_item_link_text=>'PRUEBA DRIVE'
+,p_list_item_link_target=>'f?p=&APP_ID.:340:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'340'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(93843592090706968)
+,p_list_item_display_sequence=>1500
+,p_list_item_link_text=>'BSCALEND'
+,p_list_item_link_target=>'f?p=&APP_ID.:351:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'351,352'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(95830798291106647)
+,p_list_item_display_sequence=>1510
+,p_list_item_link_text=>'RPFACMAS'
+,p_list_item_link_target=>'f?p=&APP_ID.:346:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'346'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(99337150895242009)
+,p_list_item_display_sequence=>1520
+,p_list_item_link_text=>'prueba_hector'
+,p_list_item_link_target=>'f?p=&APP_ID.:356:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'356'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(99700079832235263)
+,p_list_item_display_sequence=>1530
+,p_list_item_link_text=>'Clientes'
+,p_list_item_link_target=>'f?p=&APP_ID.:357:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'357'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(100770036185081761)
+,p_list_item_display_sequence=>1540
+,p_list_item_link_text=>'RHAUTPER'
+,p_list_item_link_target=>'f?p=&APP_ID.:359:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'359'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(101973746720920931)
+,p_list_item_display_sequence=>1550
+,p_list_item_link_text=>'Facturacion Masiva CPH - RPFACCPH'
+,p_list_item_link_target=>'f?p=&APP_ID.:361:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'361'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(102636831802710973)
+,p_list_item_display_sequence=>1560
+,p_list_item_link_text=>'vtconfac'
+,p_list_item_link_target=>'f?p=&APP_ID.:193:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'193'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(103902415872743415)
+,p_list_item_display_sequence=>1570
+,p_list_item_link_text=>'Favoritos'
+,p_list_item_link_target=>'f?p=&APP_ID.:360:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'360'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(104455670930611629)
+,p_list_item_display_sequence=>1580
+,p_list_item_link_text=>unistr('Autorizaci\00F3n de solicitudes de requerimiento de personal-RHAUTREQ')
+,p_list_item_link_target=>'f?p=&APP_ID.:362:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'362'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(104670584606114704)
+,p_list_item_display_sequence=>1590
+,p_list_item_link_text=>unistr('CNFELECT Facturas Electr\00F3nicas no migradas')
+,p_list_item_link_target=>'f?p=&APP_ID.:363:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'363'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(106688849265737869)
+,p_list_item_display_sequence=>1600
+,p_list_item_link_text=>'STREENS'
+,p_list_item_link_target=>'f?p=&APP_ID.:368:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'368'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(107100863688573281)
+,p_list_item_display_sequence=>1610
+,p_list_item_link_text=>'BSPROVIN - Departamentos'
+,p_list_item_link_target=>'f?p=&APP_ID.:366:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'366'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(107142551440052708)
+,p_list_item_display_sequence=>1620
+,p_list_item_link_text=>'CAARTICU'
+,p_list_item_link_target=>'f?p=&APP_ID.:367:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'367'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(107669795620992545)
+,p_list_item_display_sequence=>1630
+,p_list_item_link_text=>'Pedidos de Repuesto Salon'
+,p_list_item_link_target=>'f?p=&APP_ID.:376:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'376'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(107730380200689940)
+,p_list_item_display_sequence=>1640
+,p_list_item_link_text=>'Control de pedidos de Repuestos - STREPED1'
+,p_list_item_link_target=>'f?p=&APP_ID.:379:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'379'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(108952969868031375)
+,p_list_item_display_sequence=>1650
+,p_list_item_link_text=>'NOTAS DE ENVIOS PENDIENTES - STENVPE'
+,p_list_item_link_target=>'f?p=&APP_ID.:369:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'369'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(109146204896833588)
+,p_list_item_display_sequence=>1660
+,p_list_item_link_text=>'STREPREP'
+,p_list_item_link_target=>'f?p=&APP_ID.:371:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'371'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(109256666001429435)
+,p_list_item_display_sequence=>1670
+,p_list_item_link_text=>'Show_image'
+,p_list_item_link_target=>'f?p=&APP_ID.:374:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'374'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(110447403072071061)
+,p_list_item_display_sequence=>1680
+,p_list_item_link_text=>'RECATRE - CATALOGACION DE REPUESTO'
+,p_list_item_link_target=>'f?p=&APP_ID.:380:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'380'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(110767160390397318)
+,p_list_item_display_sequence=>1690
+,p_list_item_link_text=>'Aplicacion de Notas de Credito - CCCANCUO'
+,p_list_item_link_target=>'f?p=&APP_ID.:386:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'386'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(110811890607742420)
+,p_list_item_display_sequence=>1700
+,p_list_item_link_text=>'Reporte de Cabecera  de Aplicacion de Notas de Credito - CCCANCUO'
+,p_list_item_link_target=>'f?p=&APP_ID.:387:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'387'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111388050869311559)
+,p_list_item_display_sequence=>1710
+,p_list_item_link_text=>'CCCOMCUO'
+,p_list_item_link_target=>'f?p=&APP_ID.:388:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'388'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112174595628091141)
+,p_list_item_display_sequence=>1720
+,p_list_item_link_text=>'CCRECIBO'
+,p_list_item_link_target=>'f?p=&APP_ID.:378:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'378'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112676304458381222)
+,p_list_item_display_sequence=>1730
+,p_list_item_link_text=>'Stock'
+,p_list_item_link_target=>'f?p=&APP_ID.:385:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'385'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112678966278402725)
+,p_list_item_display_sequence=>1740
+,p_list_item_link_text=>'Reportes'
+,p_list_item_link_target=>'f?p=&APP_ID.:389:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'389'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112684853881489974)
+,p_list_item_display_sequence=>1750
+,p_list_item_link_text=>'Ventas'
+,p_list_item_link_target=>'f?p=&APP_ID.:390:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'390'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(112686160520496735)
+,p_list_item_display_sequence=>1760
+,p_list_item_link_text=>'Movimientos'
+,p_list_item_link_target=>'f?p=&APP_ID.:391:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'391'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(115401945887502640)
+,p_list_item_display_sequence=>1770
+,p_list_item_link_text=>'RECONCAT'
+,p_list_item_link_target=>'f?p=&APP_ID.:401:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'401'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(117491927267257557)
+,p_list_item_display_sequence=>1780
+,p_list_item_link_text=>'Contacto del Usuario'
+,p_list_item_link_target=>'f?p=&APP_ID.:403:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'403'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(118370807835525569)
+,p_list_item_display_sequence=>1790
+,p_list_item_link_text=>'Cabecera Carga de Recibos - CCRECIBO'
+,p_list_item_link_target=>'f?p=&APP_ID.:395:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'395'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(118391724559247915)
+,p_list_item_display_sequence=>1800
+,p_list_item_link_text=>'RPRUTPED'
+,p_list_item_link_target=>'f?p=&APP_ID.:398:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'398'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(118563543946625426)
+,p_list_item_display_sequence=>1810
+,p_list_item_link_text=>'BTL'
+,p_list_item_link_target=>'f?p=&APP_ID.:404:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'404'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(120177766910454966)
+,p_list_item_display_sequence=>1820
+,p_list_item_link_text=>'Recibos Emitidos'
+,p_list_item_link_target=>'f?p=&APP_ID.:408:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'408'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(120602362091779805)
+,p_list_item_display_sequence=>1830
+,p_list_item_link_text=>'TEST'
+,p_list_item_link_target=>'f?p=&APP_ID.:413:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'413'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(120899729445497720)
+,p_list_item_display_sequence=>1840
+,p_list_item_link_text=>'Subida_Archivo'
+,p_list_item_link_target=>'f?p=&APP_ID.:414:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'414'
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(120949974921646442)
+,p_list_item_display_sequence=>1850
+,p_list_item_link_text=>'Detalle de recibos cobrados - CCRECOME'
+,p_list_item_link_target=>'f?p=&APP_ID.:415:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'415'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(122511938084035886)
+,p_list_item_display_sequence=>1860
+,p_list_item_link_text=>'RPPLARET'
+,p_list_item_link_target=>'f?p=&APP_ID.:409:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'409'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(122589839051013354)
+,p_list_item_display_sequence=>1870
+,p_list_item_link_text=>'Panel de Facturas a Rutear - RPRUPFAC'
+,p_list_item_link_target=>'f?p=&APP_ID.:412:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'412'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(123858243093561682)
+,p_list_item_display_sequence=>1880
+,p_list_item_link_text=>'Reporte Reparto por Planillas'
+,p_list_item_link_target=>'f?p=&APP_ID.:411:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'411'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(124038555741906582)
+,p_list_item_display_sequence=>1890
+,p_list_item_link_text=>unistr('Reporte Reposici\00F3n de Repuestos')
+,p_list_item_link_target=>'f?p=&APP_ID.:418:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'418'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(124456290149767136)
+,p_list_item_display_sequence=>1900
+,p_list_item_link_text=>'STKCLIEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:419:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'419'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(125896599448634421)
+,p_list_item_display_sequence=>1910
+,p_list_item_link_text=>'Adjuntos Imagenes'
+,p_list_item_link_target=>'f?p=&APP_ID.:420:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-database-arrow-up'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'420'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126001259481937814)
+,p_list_item_display_sequence=>1920
+,p_list_item_link_text=>'VTRLISTA'
+,p_list_item_link_target=>'f?p=&APP_ID.:421:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'421'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126039817052635395)
+,p_list_item_display_sequence=>1930
+,p_list_item_link_text=>'STRREMFA'
+,p_list_item_link_target=>'f?p=&APP_ID.:422:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'422'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126315111195502500)
+,p_list_item_display_sequence=>1940
+,p_list_item_link_text=>'CALIPERE'
+,p_list_item_link_target=>'f?p=&APP_ID.:423:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'423'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126370561557211055)
+,p_list_item_display_sequence=>1950
+,p_list_item_link_text=>'RPVEHICU'
+,p_list_item_link_target=>'f?p=&APP_ID.:424:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'424'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126528416824035048)
+,p_list_item_display_sequence=>1960
+,p_list_item_link_text=>'CALLASAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:425:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'425'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(126547122245543034)
+,p_list_item_display_sequence=>1970
+,p_list_item_link_text=>'RPREPAMM'
+,p_list_item_link_target=>'f?p=&APP_ID.:426:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'426'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(127786929658605347)
+,p_list_item_display_sequence=>1980
+,p_list_item_link_text=>'Repartidores'
+,p_list_item_link_target=>'f?p=&APP_ID.:429:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'429'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(127788023841604771)
+,p_list_item_display_sequence=>1990
+,p_list_item_link_text=>'RPVETARI'
+,p_list_item_link_target=>'f?p=&APP_ID.:431:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'431'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(128349438344582868)
+,p_list_item_display_sequence=>2000
+,p_list_item_link_text=>'Gestion de Visitas  - CAGESVIS'
+,p_list_item_link_target=>'f?p=&APP_ID.:434:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'434'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(128600783395785813)
+,p_list_item_display_sequence=>2010
+,p_list_item_link_text=>unistr('REMIRCA - Migraci\00F3n de Repuestos a Catalogo')
+,p_list_item_link_target=>'f?p=&APP_ID.:435:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'435'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(128602872668776601)
+,p_list_item_display_sequence=>2020
+,p_list_item_link_text=>'Cabecera de Gestion de Visitas - CAGESVIS'
+,p_list_item_link_target=>'f?p=&APP_ID.:437:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'437'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(129780187114350797)
+,p_list_item_display_sequence=>2030
+,p_list_item_link_text=>'Seguimiento de Inventario Movil'
+,p_list_item_link_target=>'f?p=&APP_ID.:440:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'440'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(130064772921642095)
+,p_list_item_display_sequence=>2040
+,p_list_item_link_text=>'test'
+,p_list_item_link_target=>'f?p=&APP_ID.:4000:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'4000'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(131306897665093791)
+,p_list_item_display_sequence=>2050
+,p_list_item_link_text=>'PRODUCT FILE'
+,p_list_item_link_target=>'f?p=&APP_ID.:433:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-forms'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'433'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(131549549832661032)
+,p_list_item_display_sequence=>2060
+,p_list_item_link_text=>'BSciudad'
+,p_list_item_link_target=>'f?p=&APP_ID.:436:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'436'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(132099287555277878)
+,p_list_item_display_sequence=>2070
+,p_list_item_link_text=>'BSBARRIO'
+,p_list_item_link_target=>'f?p=&APP_ID.:444:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'444'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(132144117623981397)
+,p_list_item_display_sequence=>2080
+,p_list_item_link_text=>unistr('Servicio T\00E9cnico')
+,p_list_item_link_target=>'f?p=&APP_ID.:446:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'446'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(132209169564841042)
+,p_list_item_display_sequence=>2090
+,p_list_item_link_text=>unistr('CPAUTOCS - Autorizaci\00F3n de Ordenes de Compra')
+,p_list_item_link_target=>'f?p=&APP_ID.:447:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-calendar-plus-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'447'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(133079174084155729)
+,p_list_item_display_sequence=>2100
+,p_list_item_link_text=>'CPPECOMV'
+,p_list_item_link_target=>'f?p=&APP_ID.:450:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'450,451'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(133507335199827430)
+,p_list_item_display_sequence=>2110
+,p_list_item_link_text=>'Motivo de Visitas'
+,p_list_item_link_target=>'f?p=&APP_ID.:443:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'443'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(133556722722643725)
+,p_list_item_display_sequence=>2120
+,p_list_item_link_text=>'CPARTICU'
+,p_list_item_link_target=>'f?p=&APP_ID.:452:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'452'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(133590356099478500)
+,p_list_item_display_sequence=>2130
+,p_list_item_link_text=>'RPPLAGAS'
+,p_list_item_link_target=>'f?p=&APP_ID.:453:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'453'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(134063919313536189)
+,p_list_item_display_sequence=>2140
+,p_list_item_link_text=>'Recepciones'
+,p_list_item_link_target=>'f?p=&APP_ID.:449:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'449'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(134098535859207535)
+,p_list_item_display_sequence=>2150
+,p_list_item_link_text=>'VALIDA_EMAIL'
+,p_list_item_link_target=>'f?p=&APP_ID.:454:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'454'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(134148203425717254)
+,p_list_item_display_sequence=>2160
+,p_list_item_link_text=>'Identificaciones'
+,p_list_item_link_target=>'f?p=&APP_ID.:455:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'455'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(134201330351569367)
+,p_list_item_display_sequence=>2170
+,p_list_item_link_text=>'RPLIQFOK'
+,p_list_item_link_target=>'f?p=&APP_ID.:456:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'456'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(135791329563981538)
+,p_list_item_display_sequence=>2180
+,p_list_item_link_text=>'RPPLALIQ'
+,p_list_item_link_target=>'f?p=&APP_ID.:460:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'460'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(135826949575791300)
+,p_list_item_display_sequence=>2190
+,p_list_item_link_text=>'Pedidos de Compras'
+,p_list_item_link_target=>'f?p=&APP_ID.:461:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'461'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(135867488686686538)
+,p_list_item_display_sequence=>2200
+,p_list_item_link_text=>'RPROTV'
+,p_list_item_link_target=>'f?p=&APP_ID.:462:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'462'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(135996310222324591)
+,p_list_item_display_sequence=>2210
+,p_list_item_link_text=>'RPFACPLA'
+,p_list_item_link_target=>'f?p=&APP_ID.:463:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'463'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(136324503056654848)
+,p_list_item_display_sequence=>2220
+,p_list_item_link_text=>'DIRECTORIO DE IMAGENES'
+,p_list_item_link_target=>'f?p=&APP_ID.:464:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'464,465'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(136479609572063196)
+,p_list_item_display_sequence=>2230
+,p_list_item_link_text=>'CCNOTCRE'
+,p_list_item_link_target=>'f?p=&APP_ID.:457:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'457'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(137343863401524271)
+,p_list_item_display_sequence=>2240
+,p_list_item_link_text=>'seguimient obr'
+,p_list_item_link_target=>'f?p=&APP_ID.:470:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'470,471'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(137723902003135274)
+,p_list_item_display_sequence=>2250
+,p_list_item_link_text=>'Liquidacion de Fletes Tercerizados - RPLIQFLE'
+,p_list_item_link_target=>'f?p=&APP_ID.:472:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'472'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(139910072501126392)
+,p_list_item_display_sequence=>2260
+,p_list_item_link_text=>'CCINGEGR'
+,p_list_item_link_target=>'f?p=&APP_ID.:467:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'467'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(140052433068596558)
+,p_list_item_display_sequence=>2270
+,p_list_item_link_text=>'CCCSALDO'
+,p_list_item_link_target=>'f?p=&APP_ID.:470:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'470'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(140618774208372783)
+,p_list_item_display_sequence=>2280
+,p_list_item_link_text=>'Carga de Notas de Debito por importes - CCDEBITO'
+,p_list_item_link_target=>'f?p=&APP_ID.:476:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'476'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(141211290446795123)
+,p_list_item_display_sequence=>2290
+,p_list_item_link_text=>'Diferencias de Cambios'
+,p_list_item_link_target=>'f?p=&APP_ID.:477:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'477'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(141393676622316458)
+,p_list_item_display_sequence=>2300
+,p_list_item_link_text=>'STPEREPR'
+,p_list_item_link_target=>'f?p=&APP_ID.:474:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'474'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(141399968520253308)
+,p_list_item_display_sequence=>2310
+,p_list_item_link_text=>'STUBIART'
+,p_list_item_link_target=>'f?p=&APP_ID.:475:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'475'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(141759505770155831)
+,p_list_item_display_sequence=>2320
+,p_list_item_link_text=>'STSEREPR'
+,p_list_item_link_target=>'f?p=&APP_ID.:479:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'479'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(142974063403348165)
+,p_list_item_display_sequence=>2330
+,p_list_item_link_text=>'Armado de Equipos - STARDETE'
+,p_list_item_link_target=>'f?p=&APP_ID.:478:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'478'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(143116394930764321)
+,p_list_item_display_sequence=>2340
+,p_list_item_link_text=>'Seguimiento de Retiro de Prod. y SPP - CAGESRPP'
+,p_list_item_link_target=>'f?p=&APP_ID.:483:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'483'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(143705417755772260)
+,p_list_item_display_sequence=>2350
+,p_list_item_link_text=>'CAOTSINT'
+,p_list_item_link_target=>'f?p=&APP_ID.:484:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'484'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(144477936302786339)
+,p_list_item_display_sequence=>2360
+,p_list_item_link_text=>'Control de Pedidos de Repuestos - CAREPPED'
+,p_list_item_link_target=>'f?p=&APP_ID.:482:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'482'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(145141281448090925)
+,p_list_item_display_sequence=>2380
+,p_list_item_link_text=>'Listado para Inventario - STREXINV'
+,p_list_item_link_target=>'f?p=&APP_ID.:487:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'487'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(145850456500730420)
+,p_list_item_display_sequence=>2390
+,p_list_item_link_text=>'STRPEDEN'
+,p_list_item_link_target=>'f?p=&APP_ID.:488:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'488'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(145854791971697964)
+,p_list_item_display_sequence=>2400
+,p_list_item_link_text=>'STSOLAJS'
+,p_list_item_link_target=>'f?p=&APP_ID.:491:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'491'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(145927152103246876)
+,p_list_item_display_sequence=>2410
+,p_list_item_link_text=>unistr('Mantenimiento de Equivalencia entre Art\00EDculos - STEQUART')
+,p_list_item_link_target=>'f?p=&APP_ID.:492:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'492'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(146031603199316392)
+,p_list_item_display_sequence=>2420
+,p_list_item_link_text=>'STSOLAJS_BUSQ'
+,p_list_item_link_target=>'f?p=&APP_ID.:490:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'490'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147025431213953855)
+,p_list_item_display_sequence=>2430
+,p_list_item_link_text=>'Comision por Lineas Reparadas - CALINCOM'
+,p_list_item_link_target=>'f?p=&APP_ID.:493:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'493'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147029005391878074)
+,p_list_item_display_sequence=>2440
+,p_list_item_link_text=>'STLIPRST'
+,p_list_item_link_target=>'f?p=&APP_ID.:494:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'494'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147524744859464171)
+,p_list_item_display_sequence=>2450
+,p_list_item_link_text=>'Problemas y Soluciones - CAPROSOL'
+,p_list_item_link_target=>'f?p=&APP_ID.:495:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'495'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147852324418434208)
+,p_list_item_display_sequence=>2460
+,p_list_item_link_text=>'AGENDA2'
+,p_list_item_link_target=>'f?p=&APP_ID.:496:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'496'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147905070274691595)
+,p_list_item_display_sequence=>2470
+,p_list_item_link_text=>'AGENDA3'
+,p_list_item_link_target=>'f?p=&APP_ID.:497:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'497'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(147915505692644225)
+,p_list_item_display_sequence=>2480
+,p_list_item_link_text=>'Contactos de Proveedores - CMCONTAC'
+,p_list_item_link_target=>'f?p=&APP_ID.:498:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'498'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(148337023326470983)
+,p_list_item_display_sequence=>2490
+,p_list_item_link_text=>'CAOBJGPV'
+,p_list_item_link_target=>'f?p=&APP_ID.:499:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'499'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(148349782873389893)
+,p_list_item_display_sequence=>2500
+,p_list_item_link_text=>'Carga de proveedores(STNGO-STA) - CAPROVEE'
+,p_list_item_link_target=>'f?p=&APP_ID.:501:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'501'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(148415261821153126)
+,p_list_item_display_sequence=>2510
+,p_list_item_link_text=>'PRUEBA TEMPORAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:503:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'503'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(148517444287793644)
+,p_list_item_display_sequence=>2520
+,p_list_item_link_text=>'STARTIMO'
+,p_list_item_link_target=>'f?p=&APP_ID.:504:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'504'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(148592600730567337)
+,p_list_item_display_sequence=>2530
+,p_list_item_link_text=>'Maestro Mano de Obra STA - CAMOSTAM'
+,p_list_item_link_target=>'f?p=&APP_ID.:505:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'505'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(152743041188084123)
+,p_list_item_display_sequence=>2540
+,p_list_item_link_text=>'Registro de Entregas de Ots en Garantia - CASALOTS'
+,p_list_item_link_target=>'f?p=&APP_ID.:510:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'510'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(153174807744797532)
+,p_list_item_display_sequence=>2550
+,p_list_item_link_text=>'Seguimiento de Retiro de Productos - CASEGRP'
+,p_list_item_link_target=>'f?p=&APP_ID.:511:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'511'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(153352645816852723)
+,p_list_item_display_sequence=>2560
+,p_list_item_link_text=>unistr('Solicitud de Revisi\00F3n de Ots para SNC - CAVERSOL')
+,p_list_item_link_target=>'f?p=&APP_ID.:500:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'500'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(153721501631264784)
+,p_list_item_display_sequence=>2570
+,p_list_item_link_text=>'Resumen de Entrada - Salida - STRENSA'
+,p_list_item_link_target=>'f?p=&APP_ID.:506:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'506'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(153722605192249571)
+,p_list_item_display_sequence=>2580
+,p_list_item_link_text=>'STLOTES'
+,p_list_item_link_target=>'f?p=&APP_ID.:507:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'507'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(153943406338284489)
+,p_list_item_display_sequence=>2590
+,p_list_item_link_text=>'STARTIMO_BUSQ'
+,p_list_item_link_target=>'f?p=&APP_ID.:509:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'509'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(154345804116458267)
+,p_list_item_display_sequence=>2600
+,p_list_item_link_text=>'Mantenimiento de Entrada/Salida de Articulos - STENTSAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:512:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'512'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(154350378579401061)
+,p_list_item_display_sequence=>2610
+,p_list_item_link_text=>'Bloques - Articulos STBLOART'
+,p_list_item_link_target=>'f?p=&APP_ID.:513:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'513'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(154467259672865491)
+,p_list_item_display_sequence=>2620
+,p_list_item_link_text=>'FVLISVAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:514:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'514'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(154855209941601624)
+,p_list_item_display_sequence=>2630
+,p_list_item_link_text=>'Cabecera de Mantenimiento de Entrada/Salida de Articulos - STENTSAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:516:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'516'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(154897661828816964)
+,p_list_item_display_sequence=>2640
+,p_list_item_link_text=>'Puestos'
+,p_list_item_link_target=>'f?p=&APP_ID.:517:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'517,518'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(155284732438692187)
+,p_list_item_display_sequence=>2650
+,p_list_item_link_text=>'Cierre De Pedidos - VTACIEPE'
+,p_list_item_link_target=>'f?p=&APP_ID.:519:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'519'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(155358063122786502)
+,p_list_item_display_sequence=>2660
+,p_list_item_link_text=>'CAAPRSNC'
+,p_list_item_link_target=>'f?p=&APP_ID.:515:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'515'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(155400495894186258)
+,p_list_item_display_sequence=>2670
+,p_list_item_link_text=>'CAMODSNC'
+,p_list_item_link_target=>'f?p=&APP_ID.:520:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'520'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(156473208088463768)
+,p_list_item_display_sequence=>2680
+,p_list_item_link_text=>unistr('Asociaci\00F3n de Departamento y Motivos SNC - CAMODSNC')
+,p_list_item_link_target=>'f?p=&APP_ID.:521:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'521'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(156655427680096808)
+,p_list_item_display_sequence=>2690
+,p_list_item_link_text=>'CAMOTSNC'
+,p_list_item_link_target=>'f?p=&APP_ID.:522:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'522'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(156696571166652632)
+,p_list_item_display_sequence=>2700
+,p_list_item_link_text=>'Control de Estado de Solicitud No Conforme - CACESNC'
+,p_list_item_link_target=>'f?p=&APP_ID.:523:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'523'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(157165037658880421)
+,p_list_item_display_sequence=>2710
+,p_list_item_link_text=>'Canje de Puntos - STPROCAN'
+,p_list_item_link_target=>'f?p=&APP_ID.:524:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'524'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(157583945852663382)
+,p_list_item_display_sequence=>2720
+,p_list_item_link_text=>'COCROAUD'
+,p_list_item_link_target=>'f?p=&APP_ID.:525:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'525'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(157617090607929655)
+,p_list_item_display_sequence=>2730
+,p_list_item_link_text=>'cocroaud-busq'
+,p_list_item_link_target=>'f?p=&APP_ID.:527:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'527'
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(157821362478776951)
+,p_list_item_display_sequence=>2740
+,p_list_item_link_text=>'INFORMES TICKETS'
+,p_list_item_link_target=>'f?p=&APP_ID.:528:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'528'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(158250105389683430)
+,p_list_item_display_sequence=>2750
+,p_list_item_link_text=>'Generar Varios Vales - STPROCAN'
+,p_list_item_link_target=>'f?p=&APP_ID.:529:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'529'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(158292439427455475)
+,p_list_item_display_sequence=>2760
+,p_list_item_link_text=>'Cargar Archivo STENTSAL'
+,p_list_item_link_target=>'f?p=&APP_ID.:530:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-database-arrow-up'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'530'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(159719204370185397)
+,p_list_item_display_sequence=>2770
+,p_list_item_link_text=>'Retiro de Productos'
+,p_list_item_link_target=>'f?p=&APP_ID.:532:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'532'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(160226938227293481)
+,p_list_item_display_sequence=>2790
+,p_list_item_link_text=>unistr('Par\00E1metros Comisi\00F3n - CPH')
+,p_list_item_link_target=>'f?p=&APP_ID.:534:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'534'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(160909284706807194)
+,p_list_item_display_sequence=>2800
+,p_list_item_link_text=>'PROCESAR OT'
+,p_list_item_link_target=>'f?p=&APP_ID.:535:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'535'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(162601161689582579)
+,p_list_item_display_sequence=>2810
+,p_list_item_link_text=>'NOTA CREDITO'
+,p_list_item_link_target=>'f?p=&APP_ID.:541:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'541'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(163565501773500086)
+,p_list_item_display_sequence=>2820
+,p_list_item_link_text=>'Tracking Pedidos'
+,p_list_item_link_target=>'f?p=&APP_ID.:545:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'545'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(164373325446574310)
+,p_list_item_display_sequence=>2830
+,p_list_item_link_text=>'Busqueda de Pedidos - CPPRPECM'
+,p_list_item_link_target=>'f?p=&APP_ID.:544:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'544'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(164460579160116001)
+,p_list_item_display_sequence=>2850
+,p_list_item_link_text=>'ESTADO FACTURACION'
+,p_list_item_link_target=>'f?p=&APP_ID.:547:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'547'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(170061999213456290)
+,p_list_item_display_sequence=>2860
+,p_list_item_link_text=>'Facturas Electronicas - Reprocesos'
+,p_list_item_link_target=>'f?p=&APP_ID.:543:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'543'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(171691011452308001)
+,p_list_item_display_sequence=>2870
+,p_list_item_link_text=>'Seguimiento de Prestamos de Productos'
+,p_list_item_link_target=>'f?p=&APP_ID.:546:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'546'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(173894582967675269)
+,p_list_item_display_sequence=>2880
+,p_list_item_link_text=>'Informe de Comisiones'
+,p_list_item_link_target=>'f?p=&APP_ID.:549:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'549'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(175763121565559697)
+,p_list_item_display_sequence=>2890
+,p_list_item_link_text=>'Listado de postulantes'
+,p_list_item_link_target=>'f?p=&APP_ID.:555:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'555'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(175839791375585470)
+,p_list_item_display_sequence=>2900
+,p_list_item_link_text=>'DESCARGA PDF'
+,p_list_item_link_target=>'f?p=&APP_ID.:557:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'557'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(178313071891588903)
+,p_list_item_display_sequence=>2910
+,p_list_item_link_text=>'STGEINMO'
+,p_list_item_link_target=>'f?p=&APP_ID.:556:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'556'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(179066656163152110)
+,p_list_item_display_sequence=>2920
+,p_list_item_link_text=>'Generacion de Inventario Movil'
+,p_list_item_link_target=>'f?p=&APP_ID.:559:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'559'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(179142784868484616)
+,p_list_item_display_sequence=>2930
+,p_list_item_link_text=>unistr('Inventar\00EDo de Art\00EDculos')
+,p_list_item_link_target=>'f?p=&APP_ID.:562:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'562'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(179492909216421425)
+,p_list_item_display_sequence=>2940
+,p_list_item_link_text=>'Prueba_hector'
+,p_list_item_link_target=>'f?p=&APP_ID.:564:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'564'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(182722303093395508)
+,p_list_item_display_sequence=>2950
+,p_list_item_link_text=>'Usuario Inventario Movil'
+,p_list_item_link_target=>'f?p=&APP_ID.:570:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'570,571'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(182732132938014916)
+,p_list_item_display_sequence=>2960
+,p_list_item_link_text=>'Inventario Actual'
+,p_list_item_link_target=>'f?p=&APP_ID.:572:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'572'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(183070600844522882)
+,p_list_item_display_sequence=>2970
+,p_list_item_link_text=>'CAMOVOT'
+,p_list_item_link_target=>'f?p=&APP_ID.:568:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-forms'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'568'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(184628172146913084)
+,p_list_item_display_sequence=>2980
+,p_list_item_link_text=>'Importar Puntos'
+,p_list_item_link_target=>'f?p=&APP_ID.:569:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-database-arrow-up'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'569'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(186540307952762404)
+,p_list_item_display_sequence=>2990
+,p_list_item_link_text=>'Encuestas'
+,p_list_item_link_target=>'f?p=&APP_ID.:576:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'576'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(187673431140283172)
+,p_list_item_display_sequence=>3000
+,p_list_item_link_text=>'AGENDAMIENTOS'
+,p_list_item_link_target=>'f?p=&APP_ID.:577:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-calendar-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'577'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(187740441607766783)
+,p_list_item_display_sequence=>3010
+,p_list_item_link_text=>unistr('Agrupaci\00F3n Vendedores')
+,p_list_item_link_target=>'f?p=&APP_ID.:579:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-layout-header-sidebar-left'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'579,580'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(187780953504553758)
+,p_list_item_display_sequence=>3020
+,p_list_item_link_text=>'AGRUPACION COMISION VENDEDORES'
+,p_list_item_link_target=>'f?p=&APP_ID.:579:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'579'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(387944013835836797)
+,p_list_item_display_sequence=>3030
+,p_list_item_link_text=>'TUR - Llamador General UP'
+,p_list_item_link_target=>'f?p=&APP_ID.:656:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-file-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'656'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(1028776420535737472)
+,p_list_item_display_sequence=>3040
+,p_list_item_link_text=>'Log Adaia'
+,p_list_item_link_target=>'f?p=&APP_ID.:589:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'589,590'
+);
+wwv_flow_imp.component_end;
+end;
+/

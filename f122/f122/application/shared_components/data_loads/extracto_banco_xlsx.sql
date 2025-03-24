@@ -1,0 +1,132 @@
+prompt --application/shared_components/data_loads/extracto_banco_xlsx
+begin
+--   Manifest
+--     DATA LOAD: EXTRACTO_BANCO_XLSX
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'EXTRACTO_BANCO_XLSX'
+,p_format=>'XLSX'
+,p_encoding=>'utf-8'
+,p_csv_enclosed=>'"'
+,p_has_header_row=>true
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(508212166766225145)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C001'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'FECHA'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(508212496112225145)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C002'
+,p_sequence=>2
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'NRO_LINEA'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509212902216290448)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C003'
+,p_sequence=>3
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>100
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'NRO_DOCUMENTO'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509213556231293007)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C004'
+,p_sequence=>4
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>100
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'TIPO_TRANSACCION'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509214444769295821)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C005'
+,p_sequence=>5
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>100
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'DETALLE'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509215176842305315)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C006'
+,p_sequence=>6
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>50
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'DEBE'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509215443569307325)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C007'
+,p_sequence=>7
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>50
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'HABER'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(509215896424309387)
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_name=>'C008'
+,p_sequence=>8
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>50
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'SALDO'
+);
+wwv_flow_imp_shared.create_load_table(
+ p_id=>wwv_flow_imp.id(508212744259225145)
+,p_name=>'EXTRACTO_BANCO_XLSX'
+,p_static_id=>'EXTRACTO_BANCO_XLSX'
+,p_target_type=>'COLLECTION'
+,p_collection_name=>'TESORERIA_IMPORTAR_EXTRACTO'
+,p_data_profile_id=>wwv_flow_imp.id(508211990330225145)
+,p_loading_method=>'APPEND'
+,p_commit_interval=>200
+,p_error_handling=>'LOG_ROWS'
+,p_error_collection_name=>'ERROR_EXTRACTO_BANCO'
+,p_skip_validation=>'N'
+);
+wwv_flow_imp.component_end;
+end;
+/

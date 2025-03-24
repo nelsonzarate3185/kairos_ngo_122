@@ -1,0 +1,222 @@
+prompt --application/pages/page_00439
+begin
+--   Manifest
+--     PAGE: 00439
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>439
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Mapa Sucursal Cliente'
+,p_alias=>'MAPA-SUCURSAL-CLIENTE'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Mapa Sucursal Cliente'
+,p_autocomplete_on_off=>'OFF'
+,p_step_template=>wwv_flow_imp.id(40080790783263649)
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'03'
+,p_last_updated_by=>'INV'
+,p_last_upd_yyyymmddhh24miss=>'20230317085427'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(158801973984314876)
+,p_plug_name=>'<span style="display:none">Ubicacion</span>'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_new_grid_row=>false
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT latitud lat, longitud lng, nombre name, cod_sucursal id FROM v_sucursal_cliente_apex',
+'where cod_cliente=:P439_COD_CLIENTE',
+'and latitud is not null'))
+,p_plug_source_type=>'PLUGIN_COM.JK64.REPORT_GOOGLE_MAP_R1'
+,p_ajax_items_to_submit=>'P439_COD_CLIENTE'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'400'
+,p_attribute_02=>'PINS'
+,p_attribute_03=>'13'
+,p_attribute_04=>'PAN_ON_CLICK:PAN_ALLOWED:ZOOM_ALLOWED'
+,p_attribute_21=>'N'
+,p_attribute_22=>'ROADMAP'
+,p_attribute_24=>'Y'
+,p_attribute_25=>'auto'
+);
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(158815627545769845)
+,p_name=>'<span style="display:none">Sucursales</span>'
+,p_template=>wwv_flow_imp.id(40125238939263661)
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ',
+'COD_CLIENTE,',
+'COD_PERSONA,',
+'NOMBRE,',
+'COD_SUCURSAL,',
+'DIRECCION,',
+'COD_PAIS,',
+'COD_PROVINCIA,',
+'COD_CIUDAD,',
+'TELEF_CONTACTO,',
+'CONTACTO,',
+'EMAIL_CONTACTO',
+'',
+'from v_sucursal_cliente_apex',
+'where COD_CLIENTE = :P439_COD_CLIENTE'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P439_COD_CLIENTE'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_imp.id(40147995650263667)
+,p_query_num_rows=>4
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'no data found'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_query_row_count_max=>500
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_prn_format=>'PDF'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129056839022148122)
+,p_query_column_id=>1
+,p_column_alias=>'COD_CLIENTE'
+,p_column_display_sequence=>1
+,p_use_as_row_header=>'N'
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129057251263148121)
+,p_query_column_id=>2
+,p_column_alias=>'COD_PERSONA'
+,p_column_display_sequence=>2
+,p_use_as_row_header=>'N'
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129057621663148121)
+,p_query_column_id=>3
+,p_column_alias=>'NOMBRE'
+,p_column_display_sequence=>3
+,p_column_heading=>'Nombre'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129058032041148121)
+,p_query_column_id=>4
+,p_column_alias=>'COD_SUCURSAL'
+,p_column_display_sequence=>4
+,p_use_as_row_header=>'N'
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129058403228148120)
+,p_query_column_id=>5
+,p_column_alias=>'DIRECCION'
+,p_column_display_sequence=>5
+,p_column_heading=>'Direccion'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129058860622148120)
+,p_query_column_id=>6
+,p_column_alias=>'COD_PAIS'
+,p_column_display_sequence=>6
+,p_column_heading=>'Cod Pais'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_display_as=>'TEXT_FROM_LOV_ESC'
+,p_named_lov=>wwv_flow_imp.id(129062217137148113)
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129059247031148120)
+,p_query_column_id=>7
+,p_column_alias=>'COD_PROVINCIA'
+,p_column_display_sequence=>7
+,p_column_heading=>'Departametos'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_display_as=>'TEXT_FROM_LOV_ESC'
+,p_named_lov=>wwv_flow_imp.id(129061610378148115)
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129059690534148119)
+,p_query_column_id=>8
+,p_column_alias=>'COD_CIUDAD'
+,p_column_display_sequence=>8
+,p_column_heading=>'Ciudad'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129060012593148119)
+,p_query_column_id=>9
+,p_column_alias=>'TELEF_CONTACTO'
+,p_column_display_sequence=>9
+,p_column_heading=>'Telef Contacto'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129060490016148119)
+,p_query_column_id=>10
+,p_column_alias=>'CONTACTO'
+,p_column_display_sequence=>10
+,p_column_heading=>'Contacto'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(129060866482148118)
+,p_query_column_id=>11
+,p_column_alias=>'EMAIL_CONTACTO'
+,p_column_display_sequence=>11
+,p_column_heading=>'Email Contacto'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(129061235056148118)
+,p_name=>'P439_COD_CLIENTE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(158815627545769845)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp.component_end;
+end;
+/
