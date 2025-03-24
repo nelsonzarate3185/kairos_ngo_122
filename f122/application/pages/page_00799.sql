@@ -1,0 +1,163 @@
+prompt --application/pages/page_00799
+begin
+--   Manifest
+--     PAGE: 00799
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>799
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Adjuntos Prospectos'
+,p_alias=>'ADJUNTOS-PROSPECTOS'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Adjuntos Prospectos'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'NZARATE'
+,p_last_upd_yyyymmddhh24miss=>'20241108101651'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(454006002392588271)
+,p_plug_name=>'Adjuntar Imagen'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(429452443778993027)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_button_name=>'Volver'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_image_alt=>'Volver'
+,p_button_position=>'CLOSE'
+,p_button_redirect_url=>'f?p=&APP_ID.:25:&SESSION.::&DEBUG.:RP::'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(429452884434993031)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_button_name=>'Adjuntar'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_image_alt=>'Adjuntar'
+,p_button_position=>'CREATE'
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(429453274035993032)
+,p_name=>'P799_NRO_TICKET'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Nro Ticket'
+,p_source=>'ID_PROSPECTO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_imp.id(40186748652263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+,p_attribute_05=>'PLAIN'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(429453656053993032)
+,p_name=>'P799_COMENTARIO'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Comentario'
+,p_source=>'COMENTARIO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXTAREA'
+,p_cSize=>60
+,p_cMaxlength=>500
+,p_cHeight=>5
+,p_field_template=>wwv_flow_imp.id(40186748652263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(429454007639993032)
+,p_name=>'P799_FILE'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Archivo Adjunto'
+,p_source=>'ARCHIVO_ADJUNTO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_FILE'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186748652263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'DB_COLUMN'
+,p_attribute_02=>'MIMETYPE'
+,p_attribute_03=>'FILENAME'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'attachment'
+,p_attribute_12=>'NATIVE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(429454436138993032)
+,p_name=>'P799_FILENAME'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_use_cache_before_default=>'NO'
+,p_source=>'FILENAME'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(429454827793993033)
+,p_name=>'P799_MIMETYPE'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(454006002392588271)
+,p_use_cache_before_default=>'NO'
+,p_source=>'MIMETYPE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(429455284309993033)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_FORM_PROCESS'
+,p_process_name=>'Trae SM_adjunto_PEDIDOS_IT'
+,p_attribute_02=>'CC_ADJUNTO_PROSPECTO'
+,p_attribute_03=>'P799_NRO_TICKET'
+,p_attribute_04=>'ID_PROSPECTO'
+,p_attribute_11=>'I:U:D'
+,p_attribute_12=>'Y'
+,p_process_error_message=>'#SQLERRM_TEXT#'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_success_message=>'Action Processed.'
+);
+wwv_flow_imp.component_end;
+end;
+/

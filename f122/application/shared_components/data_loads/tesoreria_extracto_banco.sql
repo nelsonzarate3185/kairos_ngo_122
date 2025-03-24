@@ -1,0 +1,59 @@
+prompt --application/shared_components/data_loads/tesoreria_extracto_banco
+begin
+--   Manifest
+--     DATA LOAD: TESORERIA_EXTRACTO_BANCO
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_shared.create_data_profile(
+ p_id=>wwv_flow_imp.id(508124115309539798)
+,p_name=>'TESORERIA_EXTRACTO_BANCO'
+,p_format=>'CSV'
+,p_encoding=>'utf-8'
+,p_csv_enclosed=>'"'
+,p_has_header_row=>true
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(508124348230539799)
+,p_data_profile_id=>wwv_flow_imp.id(508124115309539798)
+,p_name=>'C001'
+,p_sequence=>10
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_selector_type=>'NAME'
+,p_selector=>'DATO1'
+);
+wwv_flow_imp_shared.create_data_profile_col(
+ p_id=>wwv_flow_imp.id(508124629210539799)
+,p_data_profile_id=>wwv_flow_imp.id(508124115309539798)
+,p_name=>'C002'
+,p_sequence=>20
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_selector_type=>'NAME'
+,p_selector=>'DATO2'
+);
+wwv_flow_imp_shared.create_load_table(
+ p_id=>wwv_flow_imp.id(508124971641539799)
+,p_name=>'TESORERIA_EXTRACTO_BANCO'
+,p_static_id=>'TESORERIA_EXTRACTO_BANCO'
+,p_target_type=>'COLLECTION'
+,p_collection_name=>'TESORERIA_IMPORTAR_EXTRACTO'
+,p_data_profile_id=>wwv_flow_imp.id(508124115309539798)
+,p_loading_method=>'APPEND'
+,p_commit_interval=>200
+,p_error_handling=>'ABORT'
+,p_skip_validation=>'N'
+);
+wwv_flow_imp.component_end;
+end;
+/

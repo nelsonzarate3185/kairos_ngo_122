@@ -1,0 +1,210 @@
+prompt --application/pages/page_00732
+begin
+--   Manifest
+--     PAGE: 00732
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>732
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Adjuntos Acuerdo'
+,p_alias=>'ADJUNTOS-ACUERDO'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Adjuntos Acuerdo'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'NZARATE'
+,p_last_upd_yyyymmddhh24miss=>'20240826171509'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(304570483578711471)
+,p_plug_name=>'Adjuntar Imagen'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(280016973329116227)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_button_name=>'Volver'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Volver'
+,p_button_position=>'CLOSE'
+,p_button_redirect_url=>'f?p=&APP_ID.:723:&SESSION.::&DEBUG.:RP,::'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(280017315189116228)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_button_name=>'Adjuntar'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Adjuntar'
+,p_button_position=>'CREATE'
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(280017782497116228)
+,p_name=>'P732_NRO_TICKET'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_source=>'NRO_COMPROBANTE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(280018108553116229)
+,p_name=>'P732_COMENTARIO'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Comentario'
+,p_source=>'COMENTARIO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXTAREA'
+,p_cSize=>60
+,p_cMaxlength=>500
+,p_cHeight=>5
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(280018549773116229)
+,p_name=>'P732_FILE'
+,p_is_required=>true
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Archivo Adjunto'
+,p_source=>'ARCHIVO_ADJUNTO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_FILE'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'DB_COLUMN'
+,p_attribute_02=>'MIMETYPE'
+,p_attribute_03=>'FILENAME'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'attachment'
+,p_attribute_12=>'NATIVE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(280018948611116229)
+,p_name=>'P732_FILENAME'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_source=>'FILENAME'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(280019315644116229)
+,p_name=>'P732_MIMETYPE'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_source=>'MIMETYPE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(373231490809924231)
+,p_name=>'P732_COD_USUARIO'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'P_COD_USUARIO'
+,p_item_default_type=>'ITEM'
+,p_source=>'COD_USUARIO'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(373231577692924232)
+,p_name=>'P732_FECHA'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(304570483578711471)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'sysdate'
+,p_item_default_type=>'EXPRESSION'
+,p_item_default_language=>'PLSQL'
+,p_source=>'FECHA'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(373231684662924233)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'init'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+':P732_COD_USUARIO:=:P_COD_USUARIO;',
+':P732_FECHA:=sysdate;'))
+,p_process_clob_language=>'PLSQL'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(280019783085116231)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_FORM_PROCESS'
+,p_process_name=>'Trae SM_adjunto_acuerdo'
+,p_attribute_02=>'VT_ADJUNTO_ACUERDO_COMERCIAL'
+,p_attribute_03=>'P732_NRO_ACUERDO'
+,p_attribute_04=>'NRO_COMPROBANTE'
+,p_attribute_11=>'I:U:D'
+,p_attribute_12=>'Y'
+,p_process_error_message=>'#SQLERRM_TEXT#'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_success_message=>'Transaccion Procesada.'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(373231774245924234)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'New'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+':P732_COD_USUARIO:=:P_COD_USUARIO;',
+':P732_FECHA:=sysdate;'))
+,p_process_clob_language=>'PLSQL'
+);
+wwv_flow_imp.component_end;
+end;
+/

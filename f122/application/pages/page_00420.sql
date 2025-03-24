@@ -1,0 +1,110 @@
+prompt --application/pages/page_00420
+begin
+--   Manifest
+--     PAGE: 00420
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.0'
+,p_default_workspace_id=>2715162693355865
+,p_default_application_id=>122
+,p_default_id_offset=>0
+,p_default_owner=>'INV'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>420
+,p_user_interface_id=>wwv_flow_imp.id(40210426655263685)
+,p_name=>'Adjuntos Imagenes'
+,p_alias=>'ADJUNTOS-IMAGENES'
+,p_step_title=>'Adjuntos Imagenes'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'17'
+,p_last_updated_by=>'HSEGOVIA'
+,p_last_upd_yyyymmddhh24miss=>'20230313093519'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(125156820377724616)
+,p_plug_name=>'Imagenes'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>990
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(125157297947724620)
+,p_plug_name=>'Nuevo'
+,p_parent_plug_id=>wwv_flow_imp.id(125156820377724616)
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(40125238939263661)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_source_type=>'PLUGIN_DE.DANIELH.DROPZONE2'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'COLLECTION'
+,p_attribute_02=>'DROPZONE_UPLOAD'
+,p_attribute_07=>'STYLE1'
+,p_attribute_08=>'700px'
+,p_attribute_09=>'400px'
+,p_attribute_10=>'2'
+,p_attribute_15=>'NORMAL'
+,p_attribute_16=>'true'
+,p_attribute_17=>'true'
+,p_attribute_18=>'false'
+,p_attribute_19=>'false'
+,p_attribute_20=>'false'
+,p_attribute_22=>'false'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(125157035813724618)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(125156820377724616)
+,p_button_name=>'Guardar'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(40187749278263678)
+,p_button_image_alt=>'Guardar'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(125156911030724617)
+,p_name=>'P420_ADJUNTO'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(125156820377724616)
+,p_prompt=>'Nuevo'
+,p_display_as=>'NATIVE_FILE'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(40186634462263678)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'APEX_APPLICATION_TEMP_FILES'
+,p_attribute_09=>'SESSION'
+,p_attribute_10=>'N'
+,p_attribute_12=>'INLINE'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(125900850876634408)
+,p_name=>'Cargar Archivo'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P420_FILE'
+,p_condition_element=>'P420_FILE'
+,p_triggering_condition_type=>'NOT_NULL'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(125901352629634408)
+,p_event_id=>wwv_flow_imp.id(125900850876634408)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SUBMIT_PAGE'
+,p_attribute_02=>'Y'
+);
+wwv_flow_imp.component_end;
+end;
+/
